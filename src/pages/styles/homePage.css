@@ -1,0 +1,34 @@
+.pokehome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pokehome__img {
+    padding-top: 200px;
+    width: 400px;
+    
+}
+.pokehome__greeting {
+    padding-top: 40px;
+    font-family: 'Franklin Gothic Medium';
+    color: #FD1936;
+    text-shadow:-1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px -1px 0 #000;
+}
+.pokehome__name {
+   font-size: larger; 
+   padding-bottom: 30px;
+   font-family: 'Franklin Gothic Medium';
+}
+.pokehome__submit {
+    display: flex;
+    margin-bottom: 467px;
+}
+.pokehome__button {
+    width: 100px;
+    height: 30px;
+    background-color:#D93F3F;
+    color: white;
+}

@@ -1,0 +1,29 @@
+.pokeinfo {
+    font-family: 'Franklin Gothic Medium';
+    text-align: center;
+}
+.pokeinfo ::first-letter {
+    text-transform: uppercase;
+}
+.pokeinfo__stats-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.pokeinfo__stats-item span:nth-child(2) {
+    justify-self:center;
+}
+.outbar {
+    margin-left: 10%;
+    overflow: hidden;
+    grid-column: span 2;
+    border: 1px solid;
+    border-radius: 5px;
+    height: 20px;
+    width: 80%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+.inbar {
+    background-color:#F5C25C;
+    height: 100%;
+}

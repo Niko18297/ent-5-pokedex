@@ -1,0 +1,33 @@
+.pokedex {
+    font-family: 'Franklin Gothic Medium';
+}
+.pokedex__wave {
+    padding: 30px;
+}
+.pokedex__wave span {
+    color:#FD1936;
+}
+.pokedex__filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+.pokedex__form {
+    margin-bottom: 30px;
+    display: flex;
+    
+}
+.pokedex__button {
+    width: 100px;
+    height: 30px;
+    background-color:#D93F3F;
+    color: white;
+}
+.pokedex__container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
