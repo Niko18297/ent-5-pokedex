@@ -8,22 +8,22 @@
     background-color: red;
     height: 60px;
  }
- .pokefooter__img {
-     width: 250px;
-     position: absolute;
-     right: 5%;
-     bottom:-6px;
- }
  .pokefooter__black {
     position: relative;
     background-color: black;  
     height: 30px;
  }
+ .pokefooter__img {
+    position: absolute; 
+    width: 200px;
+    bottom: 10%;
+    right: 5%;
+
+ }
  .pokefooter__outcircle {
      position: absolute;
-     bottom: -130%;
-     right: 50%;
-     transform: translateY(-50%);
+     bottom: 5%;
+     left:10%;
      background-color: white;
      border: 7px solid black;
      border-radius: 50%;
