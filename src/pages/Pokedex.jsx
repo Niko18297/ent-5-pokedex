@@ -4,12 +4,14 @@ import useFetch from '../hooks/useFetch';
 import PokeCard from '../components/pokedex/PokeCard';
 import PokeSelect from '../components/pokedex/PokeSelect';
 import './styles/pokedex.css';
+import PokePages from '../components/pokedex/PokePages';
 const Pokedex = () => {
   
   const trainer = useSelector((store) => store.trainer); 
   const [inputValue, setInputValue] = useState('');
   const [typeFilter, setTypeFilter] = useState()
-  
+  const [page, setPage] = useState(1);
+
   const [pokemons, getPokemons, getType] = useFetch();
   
   
@@ -17,7 +19,7 @@ const Pokedex = () => {
     if (typeFilter) {
       getType(typeFilter);
     } else {
-    const url = 'https://pokeapi.co/api/v2/pokemon/?limit=12';
+    const url = 'https://pokeapi.co/api/v2/pokemon/?limit=1305';
     getPokemons(url);
   }
   }, [typeFilter]);
@@ -33,6 +35,14 @@ const Pokedex = () => {
    const cbFilter = (poke) => {
        return poke.name.includes(inputValue);
    }
+   
+   const quantity = 12;
+   const total = Math.ceil(pokemons?.results.filter(cbFilter).length / quantity);
+   const paginate = () => {
+      const end = quantity * page;
+      const start = end - quantity;     
+      return pokemons?.results.filter(cbFilter).slice(start, end);
+    }
 
   return (
     <div className='pokedex'>
@@ -46,9 +56,14 @@ const Pokedex = () => {
          setTypeFilter={setTypeFilter}
          />
      </div>
+     <PokePages
+      page={page}
+      setPage={setPage}
+      total={total}
+     />
      <div className='pokedex__container'>
         {
-          pokemons?.results.filter(cbFilter).map((poke) => (
+          paginate()?.map((poke) => (
             <PokeCard
             key={poke.url}
             url={poke.url}
@@ -56,6 +71,11 @@ const Pokedex = () => {
           ))
         }
      </div>
+     <PokePages
+      page={page}
+      setPage={setPage}
+      total={total}
+     />
    </div>
   )
 }

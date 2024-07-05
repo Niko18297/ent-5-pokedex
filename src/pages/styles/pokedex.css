@@ -1,4 +1,7 @@
 .pokedex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: 'Franklin Gothic Medium';
 }
 .pokedex__wave {
